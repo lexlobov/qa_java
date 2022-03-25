@@ -3,10 +3,10 @@ package com.example;
 import java.util.List;
 
 public class AlexTheLion extends Lion {
-    public AlexTheLion() throws Exception{
-        super("Самец");
+    public AlexTheLion(Feline feline) throws Exception{
+        super("Самец", feline);
     }
-    private final String sex1 = "Самец";
+
     @Override
     public int getKittens(){
         return 0;

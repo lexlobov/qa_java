@@ -7,28 +7,27 @@ import static org.junit.Assert.assertEquals;
 
 public class AnimalTest {
 
+    String wrongAnimalKind = "23423432";
+    String predator = "Хищник";
+    String carnivore = "Травоядное";
     @Test
     public void getFoodReturnsPredatorList() throws Exception{
         Animal animal = new Animal();
-        List<String> actualResult = animal.getFood("Хищник");
+        List<String> actualResult = animal.getFood(predator);
         assertEquals(List.of("Животные", "Птицы", "Рыба"), actualResult);
 
     }
     @Test
     public void getFoodReturnsCarnivoreList() throws Exception{
         Animal animal = new Animal();
-        List<String> actualResult = animal.getFood("Травоядное");
+        List<String> actualResult = animal.getFood(carnivore);
         assertEquals(List.of("Трава", "Различные растения"), actualResult);
 
     }
-    @Test
+    @Test(expected = Exception.class)
     public void getFoodThrowsException() throws Exception{
         Animal animal = new Animal();
-        try {
-            List<String> actualResult = animal.getFood("32312");
-        } catch (Exception exception){
-            assertEquals("Неизвестный вид животного, используйте значение Травоядное или Хищник", exception.getMessage());
-        }
+        List<String> actualResult = animal.getFood(wrongAnimalKind);
     }
     @Test
     public void getFamilyReturnsCorrectText(){
