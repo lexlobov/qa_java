@@ -8,11 +8,8 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-//@RunWith(MockitoJUnitRunner.class)
 public class FelineTest {
 
-//    @Mock
-//    Animal animal;
 
     @Test
     public void getFamilyReturnsFeline(){
@@ -27,17 +24,11 @@ public class FelineTest {
         assertEquals(1, actualResult);
     }
     @Test
-    public void eatMeatReturnsPredatorList(){
+    public void eatMeatReturnsPredatorList() throws Exception{
         Feline feline = new Feline();
         List<String> expectedResult = List.of("Животные", "Птицы", "Рыба");
-        try {
             List<String> actualResult = feline.eatMeat();
             assertEquals(expectedResult, actualResult);
-
-        } catch (Exception exception){
-            System.out.println("Неизвестный вид животного");
-        }
-
     }
 
 }

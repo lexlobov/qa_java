@@ -6,7 +6,6 @@ public class AlexTheLion extends Lion {
     public AlexTheLion() throws Exception{
         super("Самец");
     }
-    private final String sex1 = "Самец";
     @Override
     public int getKittens(){
         return 0;

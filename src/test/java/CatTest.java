@@ -20,15 +20,15 @@ public class CatTest {
         assertEquals("Мяу", actualResult);
     }
     @Test
-    public void getFoodReturnsPredatorFood(){
+    public void getFoodReturnsPredatorFood() throws Exception{
         List<String> expectedResult = List.of("Животные", "Птицы", "Рыба");
         Cat cat = new Cat(feline);
-        try {
+
             Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
             assertEquals(expectedResult, cat.getFood());
-        } catch (Exception exception){
+
             System.out.println("указан неверный тип животного");
-        }
+
 
     }
 }
